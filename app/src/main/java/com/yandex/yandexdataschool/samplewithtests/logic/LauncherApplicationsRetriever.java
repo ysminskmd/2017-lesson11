@@ -33,6 +33,7 @@ public class LauncherApplicationsRetriever implements ApplicationRetriever{
             try {
                 packageInfos.add(mPackageManager.getPackageInfo(info.activityInfo.packageName, 0));
             } catch (PackageManager.NameNotFoundException e) {
+                return null;
             }
         }
         return new PackageInfoConverter().convert(packageInfos);
