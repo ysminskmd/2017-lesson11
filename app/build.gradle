@@ -1,11 +1,12 @@
 apply plugin: 'com.android.application'
+apply plugin: 'jacoco-android'
 
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.yandex.yandexdataschool.samplewithtests"
-        minSdkVersion 10
+        minSdkVersion 18
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -24,11 +25,13 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.1'
+    androidTestCompile 'org.assertj:assertj-core:2.7.0'
     compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:design:25.3.0'
     testCompile 'junit:junit:4.12'
     testCompile 'org.assertj:assertj-core:2.7.0'
-    testCompile "org.mockito:mockito-core:2.+"
-    testCompile "org.robolectric:robolectric:3.3.+"
+    testCompile 'org.mockito:mockito-core:2.+'
+    testCompile 'org.robolectric:robolectric:3.3.+'
 }
